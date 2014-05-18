@@ -1,6 +1,6 @@
-var config = require('../config');
+var api = require('../index');
 
-require('../robot/motors')(config, function(err, motors) {
+api.motors(api.defaultConfig, function(err, motors) {
     if (err) {
         return console.log('ERROR:', err);
     }

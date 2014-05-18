@@ -1,8 +1,7 @@
 
-var config = require('../config');
+var api = require('../index');
 
-require('../robot/sensors')(config, function(err, sensors) {
-
+api.sensors(api.defaultConfig, function(err, sensors) {
     if (err) {
         return console.log('ERROR:', err);
     }
@@ -15,7 +14,7 @@ require('../robot/sensors')(config, function(err, sensors) {
     var ticks_left = sensors.enc_ticks_left;
     var ticks_right = sensors.enc_ticks_right;
 
-    setInterval(ontimer, 100);
+    var ontimerId = setInterval(ontimer, 100);
 
     function ontimer() {
         sensors.read();
@@ -27,4 +26,9 @@ require('../robot/sensors')(config, function(err, sensors) {
             console.log(ticks_left, ticks_right, sensors.speed_left, sensors.speed_right);
         }
     }
+    
+    setTimeout(function() {
+        cancelInterval(ontimerId);
+        sensors.stop()
+    }, 5000);
 });
