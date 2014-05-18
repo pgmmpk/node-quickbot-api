@@ -1,0 +1,25 @@
+{
+  "name": "node-quickbot-api",
+  "version": "0.0.1",
+  "description": "QuickBot API",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pgmmpk/node-quickbot-api.git"
+  },
+  "private": true,
+  "dependencies": {
+    "node-pru-adc": "~0.0.1",
+    "q": "*",
+    "async": "*"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "mocha": "~1.4.0",
+    "grunt-mocha": "~0.4.7",
+    "grunt-mocha-test": "~0.8.1",
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  }
+}
