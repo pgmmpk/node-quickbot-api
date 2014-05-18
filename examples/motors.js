@@ -1,5 +1,7 @@
 var api = require('../index');
 
+console.log(api);
+
 api.motors(api.defaultConfig, function(err, motors) {
     if (err) {
         return console.log('ERROR:', err);

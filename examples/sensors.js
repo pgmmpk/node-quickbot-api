@@ -11,24 +11,26 @@ api.sensors(api.defaultConfig, function(err, sensors) {
     sensors.read();
 
     var timer = sensors.timer;
-    var ticks_left = sensors.enc_ticks_left;
-    var ticks_right = sensors.enc_ticks_right;
+    var ticksLeft = sensors.ticksLeft;
+    var ticksRight = sensors.ticksRight;
 
     var ontimerId = setInterval(ontimer, 100);
 
     function ontimer() {
         sensors.read();
 
-        if (ticks_left != sensors.enc_ticks_left || ticks_right != sensors.enc_ticks_right) {
-            ticks_left = sensors.enc_ticks_left;
-            ticks_right = sensors.enc_ticks_right;
+        if (ticksLeft != sensors.ticksLeft || ticksRight != sensors.ticksRight) {
+            ticksLeft = sensors.ticksLeft;
+            ticksRight = sensors.ticksRight;
 
-            console.log(ticks_left, ticks_right, sensors.speed_left, sensors.speed_right);
+            console.log(ticksLeft, ticksRight, sensors.speedLeft, sensors.speedRight);
         }
     }
     
     setTimeout(function() {
-        cancelInterval(ontimerId);
+        clearInterval(ontimerId);
         sensors.stop()
-    }, 5000);
+    }, 10000);
+
+    console.log('You have 10 seconds to rotate wheels and see ticks flowing out');
 });

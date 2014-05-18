@@ -44,8 +44,8 @@ function Sensors(config, callback) {
         sensors.read = function() {
 
             sensors.timer = adc.timer();
-            sensors.encTicksReft = adc.encoder0Ticks();
-            sensors.encTicksRight = adc.encoder1Ticks();
+            sensors.ticksLeft = adc.encoder0Ticks();
+            sensors.ticksRight = adc.encoder1Ticks();
             sensors.speedLeft = TIMETICKS_PER_SECOND / (adc.encoder0Speed() + 1.0);
             sensors.speedRight = TIMETICKS_PER_SECOND / (adc.encoder1Speed() + 1.0);
 

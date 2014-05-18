@@ -15,9 +15,7 @@
   },
   "devDependencies": {
     "grunt": "~0.4.1",
-    "mocha": "~1.4.0",
-    "grunt-mocha": "~0.4.7",
-    "grunt-mocha-test": "~0.8.1",
+    "mocha": "~1.4.0"
   },
   "scripts": {
     "test": "mocha --reporter spec"
