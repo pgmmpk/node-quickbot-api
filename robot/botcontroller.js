@@ -79,8 +79,8 @@ function BotController(config, callback) {
                 return callback(err);
             }
 
-            var left = Helper(function() { return sensors.speed_left; }, function() { return sensors.enc_ticks_left; });
-            var right = Helper(function() { return sensors.speed_right; }, function() { return sensors.enc_ticks_right; });
+            var left = Helper(function() { return sensors.speedLeft; }, function() { return sensors.ticksLeft; });
+            var right = Helper(function() { return sensors.speedRight; }, function() { return sensors.ticksRight; });
 
             var bot = {};
 

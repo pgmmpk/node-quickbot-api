@@ -1,7 +1,6 @@
-var config = require('../config');
+var api = require('../index');
 
-require('../robot/qb')(config, function(err, qb) {
-
+api.qb(api.defaultConfig, function(err, qb) {
     if (err) {
         return console.log('ERROR:', err);
     }
@@ -12,12 +11,14 @@ require('../robot/qb')(config, function(err, qb) {
         qb.onTimer();
     }, 10);
 
-    qb.setSpeed(60, 60);
+    qb.setSpeed(40, 40);
 
     setTimeout(function() {
+	console.log("setting speed to ZERO");
 	qb.setSpeed(0, 0);
 	setTimeout(function() {
+            console.log("Done");
 	    clearInterval(worker);
-	}, 1000);
+	}, 2000);
     }, 2000);
 });

@@ -4,7 +4,7 @@
 
 function QB(config, callback) {
 
-    require('./bot-controller')(config, function(err, bot) {
+    require('./botcontroller')(config, function(err, bot) {
 
         if (err) {
             return callback(err);
