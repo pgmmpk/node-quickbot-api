@@ -97,7 +97,7 @@ Starts robot drivers. Call this once before using the robot.
 Must be called from a timer routine at frequency 100Hz. It recomputes internal state, adjusts torque depending on surface drag,
 infers tick and speed sign, etc.
 
-### qb.setSpeed(speed_left, speed_right)
+### qb.run(speed_left, speed_right)
 Sets reference robot speed in ticks per second. Negative values will make wheel rotate backwards. Robot utilizes PID controller
 that changes torque applied to motors in order to achieve the reference speed.
 
@@ -107,17 +107,17 @@ to stop the robot. Note that setting speed to zero while robot is moving will ca
 active breaking). This typically looks like a very sudden and jerky stop. In practice, one may want to stop slowly by using some
 interpolation.
 
-### qb.getIrDistances()
+### qb.irDistances()
 Returns set of 5 IR distance measurements in inches.
 
-### qb.getTicks()
+### qb.ticks()
 Returns an array of two values - left ticks, and right ticks. Note that these are **signed** ticks. If robot moves backward,
 ticks will decrement. When robot moves forward, ticks will increment.
 
 ### qb.resetTicks()
 Reset ticks values to zeroes
 
-### qb.getSpeed()
+### qb.speed()
 Returns an array of actual speeds of bot wheels.
 
 ### qb.stop()

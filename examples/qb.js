@@ -9,9 +9,10 @@ api.qb(api.defaultConfig, function(err, qb) {
 
     var worker = setInterval(function() {
         qb.onTimer();
+        console.log(sensors.irDistances());
     }, 10);
 
-    qb.setSpeed(40, 40);
+    qb.run(40, 40);
 
     setTimeout(function() {
 	console.log("setting speed to ZERO");

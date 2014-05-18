@@ -28,22 +28,18 @@ function QB(config, callback) {
             bot.onTimer();
         };
 
-        qb.setSpeed = function(speed_left, speed_right) {
+        qb.run = function(speed_left, speed_right) {
             bot.run(speed_left, speed_right);
         };
 
-        qb.getIr = function() {
-            return bot.values();
-        };
-
-        qb.getIrDistances = function() {
+        qb.irDistances = function() {
 
             return bot.values().map(function(v) {
                 return ir_calibration / v;
             });
         };
 
-        qb.getTicks = function() {
+        qb.ticks = function() {
             var t = bot.ticks();
             return [t[0] - ticks_origin_left, t[1] - ticks_origin_right];
         };
@@ -54,7 +50,7 @@ function QB(config, callback) {
             ticks_origin_right = t[1];
         };
 
-        qb.getSpeed = function() {
+        qb.speed = function() {
             return bot.actual_speed;
         };
 
