@@ -14,9 +14,7 @@ function QB(config, callback) {
         var ticks_origin_right = 0;
         var ir_calibration = config.IR_CALIBRATION;
 
-        var qb = {
-
-        };
+        var qb = { };
 
         qb.start = function() {
             bot.start();

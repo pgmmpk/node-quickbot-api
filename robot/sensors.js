@@ -1,7 +1,9 @@
 var bs = require('bonescript'),
     pruadc = require('pru-adc');
 
+
 var TIMETICKS_PER_SECOND = 121000;
+
 
 function Sensors(config, callback) {
 
@@ -42,10 +44,10 @@ function Sensors(config, callback) {
         sensors.read = function() {
 
             sensors.timer = adc.timer();
-            sensors.enc_ticks_left = adc.encoder0Ticks();
-            sensors.enc_ticks_right = adc.encoder1Ticks();
-            sensors.speed_left = TIMETICKS_PER_SECOND / (adc.encoder0Speed() + 1.0);
-            sensors.speed_right = TIMETICKS_PER_SECOND / (adc.encoder1Speed() + 1.0);
+            sensors.encTicksReft = adc.encoder0Ticks();
+            sensors.encTicksRight = adc.encoder1Ticks();
+            sensors.speedLeft = TIMETICKS_PER_SECOND / (adc.encoder0Speed() + 1.0);
+            sensors.speedRight = TIMETICKS_PER_SECOND / (adc.encoder1Speed() + 1.0);
 
             var v = adc.values();
 
