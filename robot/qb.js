@@ -1,6 +1,10 @@
+/**
+ * QuickBot object
+ */
+
 function QB(config, callback) {
 
-    require('./controller')(config, function(err, bot) {
+    require('./bot-controller')(config, function(err, bot) {
 
         if (err) {
             return callback(err);

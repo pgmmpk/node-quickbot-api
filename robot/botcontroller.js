@@ -1,4 +1,6 @@
-
+/**
+ * High-level Robot controller that stabilizes speed and infers tick sign.
+ */
 var DT = 0.05;
 var ALPHA = 1.0;
 
