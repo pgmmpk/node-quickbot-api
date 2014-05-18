@@ -9,14 +9,14 @@ api.qb(api.defaultConfig, function(err, qb) {
 
     var worker = setInterval(function() {
         qb.onTimer();
-        console.log(sensors.irDistances());
+        console.log(qb.irDistances());
     }, 10);
 
     qb.run(40, 40);
 
     setTimeout(function() {
 	console.log("setting speed to ZERO");
-	qb.setSpeed(0, 0);
+	qb.run(0, 0);
 	setTimeout(function() {
             console.log("Done");
 	    clearInterval(worker);

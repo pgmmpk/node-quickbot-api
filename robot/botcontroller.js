@@ -120,7 +120,7 @@ function BotController(config, callback) {
             };
 
             bot.values = function() {
-                return sensor.values();
+                return sensors.values;
             };
 
             bot.motors = motors;
