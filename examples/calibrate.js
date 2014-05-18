@@ -3,17 +3,17 @@ var api = require('../index'),
     async = require('async');
 
 async.parallel([
-    api.motors.bind(null, config),
+    api.motors.bind(null, api.defaultConfig),
     pruadc
     ], function(err, values) {
     if (err) {
         return console.log('ERROR:', err)
     }
-    var adc = values[0];
-    var motors = values[1];
+    var motors = values[0];
+    var adc = values[1];
 
-    adc.encoder0Pin(config.MOTOR_LEFT.encoder_pin);
-    adc.encoder1Pin(config.MOTOR_RIGHT.encoder_pin);
+    adc.encoder0Pin(api.defaultConfig.MOTOR_LEFT.encoder_pin);
+    adc.encoder1Pin(api.defaultConfig.MOTOR_RIGHT.encoder_pin);
     adc.encoder0Threshold(4096);
     adc.encoder1Threshold(4096);
     adc.start();
@@ -28,8 +28,8 @@ async.parallel([
         var enc1Values = adc.encoder1Values();
         var enc1Range = enc1Values[2] - enc1Values[1];  // max - min
 
-        var enc0Threshold = Math.round(enc0Range * 0.8);
-        var enc1Threshold = Math.round(enc1Range * 0.8);
+        var enc0Threshold = Math.round(enc0Range * 0.85);
+        var enc1Threshold = Math.round(enc1Range * 0.85);
 
         if (enc0Threshold === 0) {
             console.log('ERROR: something wrong with the left wheel motor or encoder (sensor range was zero)');
