@@ -57,7 +57,7 @@ Reads all sensors and stores result in properties. Call this function with your 
 ADC timer value. This is a time expressed in ADC scan clock units. ADC scans are performed at approx 121000 scans per second.
 Useful if you need to measure time intervals.
 
-### sensors.encTicksLeft, sensors.encTicksRight
+### sensors.ticksLeft, sensors.ticksRight
 Value of left(right) encoder ticks. Robot has 16-teeth encoder wheel, therefore if you divide ticks by 16 you will get the number
 of wheel revolutions since the start of the driver. Note that these are **unsigned** ticks, meaning that ticks grow no matter which
 direction (forward or backward) wheel rotates.
