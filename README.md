@@ -66,7 +66,7 @@ direction (forward or backward) wheel rotates.
 Speed of the wheel rotation in ticks per second. Divide this by 16 (number of encoder wheel teeth) to get speed in rotations per second.
 
 ### sensors.values
-An array of readings from 5 IR sensors (left side, left, center, right, right side). Values are millivolts.
+An array of readings from 5 IR sensors (left side, left, center, right, right side). Values are in inches.
 
 ### sensors.stop()
 Stops the driver capturing sensor values.
