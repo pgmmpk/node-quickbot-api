@@ -26,10 +26,10 @@ function Sensors(config, callback) {
 
         var sensors = {
             timer: 0,
-            speed_left: 0,
-            speed_right: 0,
-            enc_ticks_left: 0,
-            enc_ticks_right: 0,
+            speedLeft: 0,
+            speedRight: 0,
+            ticksLeft: 0,
+            ticksRight: 0,
             values: ir_pins.map(function() { return 0.0; })
         };
 
